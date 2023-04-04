@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background-color: hsl(210, 60%, 98%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p{
+    font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+main{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.notifications{
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    width: 1000px;
+    padding: 20px 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.notification-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.notification-header h1{
+    color: hsl(224, 21%, 14%);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-header .count{
+    background-color: hsl(219, 85%, 26%);
+    color:hsl(0, 0%, 100%);
+    font-size: 1.2rem;
+    padding: 3px 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-header .controls button{
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+    font-size: 16px;
+    color: hsl(219, 14%, 63%);
+}
+
+.notification-header .controls button:hover, .post:hover, .username:hover{
+    color:hsl(219, 85%, 26%);
+}
+
+.notification-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification-item{
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.avatar img{
+    height: 50px;
+}
+
+.notification-item-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.notification-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-title .content .username{
+    color: hsl(224, 21%, 14%);
+    padding-right: 5px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.notification-title .content .username:hover{
+    color:hsl(219, 85%, 26%);
+}
+
+.notification-title .content p{
+    color:hsl(219, 12%, 42%);
+    line-height: 25px;
+}
+
+.notification-title .content .post{
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.notification-title .content .group{
+    font-weight: 800;
+    color:hsl(219, 85%, 26%);
+    cursor: pointer;
+}
+
+.time{
+    color: hsl(219, 14%, 63%);
+}
+
+.notification-image img{
+    height: 50px;
+    cursor: pointer;
+}
+
+.notification-image:hover{
+    outline: 1px solid hsl(211, 68%, 94%);
+    border-radius: 5px;
+}
+
+.unread{
+    background-color: hsl(210, 60%, 98%);
+}
+
+.unread-notif{
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background-color: hsl(1, 90%, 64%);
+    border-radius: 50%;
+    margin: 0 5px;
+    margin-bottom: 2px;
+}
+
+.notification-item-content{
+    flex: 1;
+}
+
+.private-message{
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid hsl(211, 68%, 94%);
+    border-radius: 5px;
+    color:hsl(219, 12%, 42%);
+    cursor: pointer;
+}
+
+.private-message:hover{
+    background-color: hsl(211, 68%, 94%);
+}
+
+.private-message p{
+    line-height: 25px;
+}
+
+@media(max-width: 1000px){
+    main{
+        height: 100% !important;
+    }
+    .notifications{
+        width: 95%;
+        padding: 15px 10px;
+    }
+    .notification-header h1{
+        font-size: 1.2rem;
+    }
+    .notification-header .controls button{
+        font-size: .9rem;
+    }
+    p{
+        font-size: 14px;
+    }
 }
